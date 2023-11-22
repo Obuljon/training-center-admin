@@ -9,6 +9,6 @@ const PORT = process.env.PORT || 9000;
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalPipes(new ValidationPipe());
-  await app.listen(PORT, () => console.log(`server in run post:${PORT}`));
+  await app.listen(PORT, () => console.log(`server in run port:${PORT}`));
 }
 bootstrap();

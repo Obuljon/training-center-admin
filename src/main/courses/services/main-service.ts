@@ -1,7 +1,7 @@
 import { course, coursetype } from '../../../data-type/cours-type';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { Model, ObjectId } from 'mongoose';
 import { Course } from 'src/schemas/courses-schema';
 
 @Injectable()
@@ -41,7 +41,7 @@ export class CourseService {
       .catch((err) => null);
   }
 
-  async delById(_id: string) {
+  async delById(_id: string | ObjectId) {
     return this.courseModel.findByIdAndRemove(_id).catch((err) => null);
   }
 }

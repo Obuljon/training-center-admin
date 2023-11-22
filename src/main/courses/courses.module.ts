@@ -10,6 +10,7 @@ import { StudentsOfCourseService } from './services/students-service';
 import { Student, StudentSchema } from 'src/schemas/students-schema';
 import { StudentService } from '../students/services/main-service';
 import { InternalService } from '../students/services/internal-service';
+import { TeacherInternalService } from '../teachers/services/internal-service';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { InternalService } from '../students/services/internal-service';
     StudentsOfCourseService,
     StudentService,
     InternalService,
+    TeacherInternalService,
   ],
 })
 export class CoursesModule {}

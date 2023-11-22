@@ -41,7 +41,7 @@ export class StudentsOfCourseController {
     // student mavjudligini tekshiradi
     if (!isStudent)
       throw new HttpException('No student found.', HttpStatus.NOT_FOUND);
-
+    
     const iScourseSstudent = await this.studentsOfCourseService.getStudents(
       _id,
       student_id,
@@ -153,8 +153,8 @@ export class StudentsOfCourseController {
 
   @Delete('delspecialbyid/:course_id/:student_id')
   async delSpecialById(
-    @Param('student_id') student_id: string,
     @Param('course_id') course_id: string,
+    @Param('student_id') student_id: string,
   ) {
     const isStudent_id = await this.studentsOfCourseService.getStudents(
       course_id,
@@ -165,14 +165,13 @@ export class StudentsOfCourseController {
         course_id,
         student_id,
       );
-      if (delstudent['modifiedCount'] > 0) 
+      if (delstudent['modifiedCount'] > 0)
         throw new HttpException('Record deleted successfully.', HttpStatus.OK);
-      else 
+      else
         throw new HttpException(
           'Error occurred while deleting record."',
           HttpStatus.BAD_REQUEST,
         );
-      
     } else throw new HttpException('Record not found.', HttpStatus.NOT_FOUND);
   }
 }

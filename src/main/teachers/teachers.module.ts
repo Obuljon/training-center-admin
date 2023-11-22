@@ -3,13 +3,13 @@ import { MainCoController } from './controllers/main-controllers';
 import { TeacherService } from './services/main-services';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Teacher, TeacherSchema } from 'src/schemas/teachers-schema';
-import { InternalService } from './services/internal-service';
+import { TeacherInternalService } from './services/internal-service';
 
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: Teacher.name, schema: TeacherSchema }]),
   ],
   controllers: [MainCoController],
-  providers: [TeacherService, InternalService],
+  providers: [TeacherService, TeacherInternalService],
 })
 export class TeachersModule {}

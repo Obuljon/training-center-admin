@@ -9,5 +9,5 @@ export type teacher = {
 };
 
 export type teacherCourses = {
-  cours_id: string;
+  course_id: string;
 };
