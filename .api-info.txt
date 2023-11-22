@@ -1,0 +1,10 @@
+GET  =>  "/api/course/all"  => hamma course ni arr ko'rinishida qaytaradi.
+
+
+
+GET => "/api/teachers/all" => hamma teachers ni arr ko'rinishida qaytardi.
+
+
+
+
+GET => "/api/students/all" => hamma students ni arr ko'rinishida qaytaradi.
